@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Lets Vote</title>
+        <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
+        
+        <script type="text/javascript" src="/js/Chart.min.js"></script>
+    </head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="/">Lets Vote</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  {{#if user}}
+                    <li><a class="navbar-brand" href="/">{{user.name}}</a></li>
+                  {{/if}}      
+                  <li><a href="/polls/new">Create New Poll</a></li>
+                  {{#if user}}
+                    <li><a href="/mypolls">My Polls</a></li>
+                    <li><a href="/users/logout">Logout</a></li>
+                  {{else}}
+                    <li><a href="/users/login">Login</a></li>
+                    <li><a href="/users/register">Sign Up</a></li>
+                  {{/if}}
+              </ul>
+            </div><!--/.nav-collapse -->
+          </div>
+        </nav>
+
+        <div class="container">
+          {{{body}}}
+          
+        </div> <!-- /container -->
+      <br><br><br>
+      <footer class="center">
+        By <a href="https://kunalyadav.me" target="_blank">Kunal Yadav</a>
+      </footer>
+        <script src="/js/jquery.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.js"></script>
+        <script type="text/javascript" src="/js/script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!-- Main component for a primary marketing message or call to action -->
+<div class="jumbotron center">
+  <h1>Lets Vote</h1>
+  <p>Create your own polls and ask others to vote.</p>
+</div>
+<div class="row">
+  <div class="center">
+    {{#if success_msg}}
+      <div class="alert alert-success">{{success_msg}}</div>
+    {{/if}}
+    {{#if error_msg}}
+      <div class="alert alert-danger">{{error_msg}}</div>
+    {{/if}}
+    <h3>Recent Polls</h3><br>
+    <ul class="list-group">
+      {{#if titles}}
+        {{#each titles}}
+        <a class="poll-list" href="/polls/{{id}}"><li class="list-group-item active">{{title}}</li></a>
+        {{/each}}
+      {{else}}
+        <div>No polls created yet. <a href="/users/login">Login</a> to create a poll</div>
+      {{/if}}
+    </ul>
+  </div>
+</div>
